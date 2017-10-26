@@ -3,6 +3,11 @@
     "start": "micro"
   },
   "dependencies": {
-    "micro": "latest"
+    "chalk": "^2.3.0",
+    "jest": "^21.2.1",
+    "jest-in-case": "^1.0.2",
+    "micro": "latest",
+    "probot": "^3.0.0",
+    "set": "^1.1.1"
   }
 }
