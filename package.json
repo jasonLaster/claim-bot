@@ -3,6 +3,8 @@
     "start": "micro"
   },
   "dependencies": {
-    "micro": "latest"
+    "jest": "^21.2.1",
+    "micro": "latest",
+    "probot": "^3.0.0"
   }
 }
