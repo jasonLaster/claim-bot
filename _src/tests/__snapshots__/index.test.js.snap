@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Claim Bot claimed 1`] = `
+Object {
+  "issues": Object {
+    "addAssigneesToIssue": Array [],
+    "addLabels": Array [],
+    "createComment": Array [
+      Array [
+        Object {
+          "body": "Done :+1:
+",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+    "removeAssigneesFromIssue": Array [
+      Array [
+        Object {
+          "body": Object {
+            "assignees": Array [
+              "jasonLaster",
+            ],
+          },
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+    "removeLabel": Array [
+      Array [
+        Object {
+          "name": "in progress",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+  },
+  "orgs": Object {
+    "addTeamMembership": Array [],
+    "getTeamMembership": Array [],
+  },
+}
+`;
+
+exports[`Claim Bot claimed, unclaimed 1`] = `
+Object {
+  "issues": Object {
+    "addAssigneesToIssue": Array [],
+    "addLabels": Array [],
+    "createComment": Array [
+      Array [
+        Object {
+          "body": "Done :+1:
+",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+      Array [
+        Object {
+          "body": "Done :+1:
+",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+    "removeAssigneesFromIssue": Array [
+      Array [
+        Object {
+          "body": Object {
+            "assignees": Array [
+              "jasonLaster",
+            ],
+          },
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+      Array [
+        Object {
+          "body": Object {
+            "assignees": Array [
+              "jasonLaster",
+            ],
+          },
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+    "removeLabel": Array [
+      Array [
+        Object {
+          "name": "in progress",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+      Array [
+        Object {
+          "name": "in progress",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+  },
+  "orgs": Object {
+    "addTeamMembership": Array [],
+    "getTeamMembership": Array [],
+  },
+}
+`;
+
+exports[`Claim Bot issue closed 1`] = `
+Object {
+  "issues": Object {
+    "removeLabel": Array [
+      Array [
+        Object {
+          "name": "in progress",
+          "number": 4384,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+      Array [
+        Object {
+          "name": "available",
+          "number": 4384,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+  },
+}
+`;
+
+exports[`Claim Bot issue opened 1`] = `
+Object {
+  "issues": Object {
+    "addLabels": Array [
+      Array [
+        Object {
+          "labels": Array [
+            "not-available",
+          ],
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+  },
+}
+`;
+
+exports[`Claim Bot opened, claimed 1`] = `
+Object {
+  "issues": Object {
+    "addAssigneesToIssue": Array [],
+    "addLabels": Array [
+      Array [
+        Object {
+          "labels": Array [
+            "not-available",
+          ],
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+    "createComment": Array [
+      Array [
+        Object {
+          "body": "Done :+1:
+",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+    "removeAssigneesFromIssue": Array [
+      Array [
+        Object {
+          "body": Object {
+            "assignees": Array [
+              "jasonLaster",
+            ],
+          },
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+    "removeLabel": Array [
+      Array [
+        Object {
+          "name": "in progress",
+          "number": 4501,
+          "owner": "devtools-html",
+          "repo": "debugger.html",
+        },
+      ],
+    ],
+  },
+  "orgs": Object {
+    "addTeamMembership": Array [],
+    "getTeamMembership": Array [],
+  },
+}
+`;

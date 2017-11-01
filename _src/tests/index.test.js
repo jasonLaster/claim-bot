@@ -1,35 +1,58 @@
-const { createRobot } = require("probot");
-const app = require("../../index");
-function getPayload(name) {
-  return require(`./fixtures/${name}.json`);
+const { getPayload, tests } = require("./helpers");
+
+function getComment(body) {
+  const comment = require(`./fixtures/issue_comment.created.json`);
+  comment.payload.comment.body = body;
+  return comment;
 }
 
-describe("your-app", () => {
-  let robot;
-  let github;
+const APIS = {
+  issue_comment: {
+    created: [
+      "issues.addLabels",
+      "issues.removeLabel",
+      "issues.removeAssigneesFromIssue",
+      "issues.addAssigneesToIssue",
+      "issues.createComment",
+      "orgs.getTeamMembership",
+      "orgs.addTeamMembership"
+    ]
+  },
+  issue: {
+    closed: ["issues.removeLabel"],
+    opened: ["issues.addLabels"]
+  }
+};
 
-  beforeEach(() => {
-    robot = createRobot();
-    app(robot);
+const opened = getPayload("issue.opened");
+const closed = getPayload("issue.closed");
+const claimed = getComment("/claim");
+const unclaimed = getComment("/unclaim");
 
-    github = {
-      issues: {
-        createComment: jest.fn().mockReturnValue(Promise.resolve({})),
-        removeLabel: jest.fn().mockReturnValue(Promise.resolve({}))
-      }
-    };
-    // Passes the mocked out GitHub API into out robot instance
-    robot.auth = () => Promise.resolve(github);
-  });
-
-  describe("your functionality", () => {
-    it("performs an action", async () => {
-      const payload = getPayload("issue-reopened");
-
-      await robot.receive(payload);
-
-      console.log(github.issues.removeLabel.mock.calls);
-      expect(github.issues.removeLabel.mock.calls).toEqual(2);
-    });
-  });
-});
+tests("Claim Bot", { APIS, log: false }, [
+  {
+    name: "issue closed",
+    actions: ["issue.closed"],
+    events: [closed]
+  },
+  {
+    name: "issue opened",
+    actions: ["issue.opened"],
+    events: [opened]
+  },
+  {
+    name: "claimed",
+    actions: ["issue_comment.created"],
+    events: [claimed]
+  },
+  {
+    name: "claimed, unclaimed",
+    actions: ["issue_comment.created"],
+    events: [claimed, unclaimed]
+  },
+  {
+    name: "opened, claimed",
+    actions: ["issue.opened", "issue_comment.created"],
+    events: [opened, unclaimed]
+  }
+]);

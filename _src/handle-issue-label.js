@@ -1,16 +1,3 @@
-/* 
-  issue docs:
-  https://developer.github.com/v3/issues/
-  https://developer.github.com/v3/issues/labels/
-  
-  event on labels:
-  https://developer.github.com/v3/activity/events/types/#labelevent
-  
-  column docs:
-  https://developer.github.com/v3/projects/columns/
-  https://developer.github.com/v3/projects/cards/ 
-*/
-
 module.exports = handleIssueLabel
 
 async function handleIssueLabel(robot, context) {

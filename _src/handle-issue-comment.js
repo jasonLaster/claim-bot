@@ -1,8 +1,7 @@
 const comments = require("./utils/comments.js");
 
 function claim(context, message) {
-  const a = "Inside Claim(context)";
-  console.log(a);
+
   const api = context.github;
   const labels = context.payload.issue.labels.map(l => l.name);
 
@@ -73,8 +72,7 @@ function inviteUser(context) {
 }
 
 async function handleIssueComment(robot, context) {
-  const a = "Handling issue comment";
-  console.log(a);
+
   const api = context.github;
   const commentBody = context.payload.comment.body;
   const assignees = context.payload.issue.assignees;
